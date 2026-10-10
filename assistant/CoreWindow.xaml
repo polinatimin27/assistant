@@ -15,49 +15,116 @@
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="Orbit1Rotation"
-                                     Storyboard.TargetProperty="Angle"
-                                     From="0" To="360"
-                                     Duration="0:0:48"
-                                     RepeatBehavior="Forever"/>
 
-                    <DoubleAnimation Storyboard.TargetName="Orbit2Rotation"
-                                     Storyboard.TargetProperty="Angle"
-                                     From="55" To="415"
-                                     Duration="0:1:02"
-                                     RepeatBehavior="Forever"/>
+                    <!-- Основные кольца -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="OrbitImageRotation1"
+                        Storyboard.TargetProperty="Angle"
+                        From="0" To="360"
+                        Duration="0:0:52"
+                        RepeatBehavior="Forever"/>
 
-                    <DoubleAnimation Storyboard.TargetName="Orbit3Rotation"
-                                     Storyboard.TargetProperty="Angle"
-                                     From="125" To="485"
-                                     Duration="0:1:16"
-                                     RepeatBehavior="Forever"/>
+                    <DoubleAnimation
+                        Storyboard.TargetName="OrbitImageRotation2"
+                        Storyboard.TargetProperty="Angle"
+                        From="360" To="0"
+                        Duration="0:1:10"
+                        RepeatBehavior="Forever"/>
 
-                    <DoubleAnimation Storyboard.TargetName="Orbit4Rotation"
-                                     Storyboard.TargetProperty="Angle"
-                                     From="40" To="400"
-                                     Duration="0:1:30"
-                                     RepeatBehavior="Forever"/>
+                    <!-- Дальний почти невидимый слой -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="OrbitImageRotation3"
+                        Storyboard.TargetProperty="Angle"
+                        From="0" To="360"
+                        Duration="0:1:40"
+                        RepeatBehavior="Forever"/>
 
-                    <DoubleAnimation Storyboard.TargetName="ModuleSpin"
-                                     Storyboard.TargetProperty="Angle"
-                                     From="0" To="360"
-                                     Duration="0:0:14"
-                                     RepeatBehavior="Forever"/>
+                    <DoubleAnimation
+                        Storyboard.TargetName="OrbitImage3"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0.07" To="0.14"
+                        Duration="0:0:12"
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"/>
 
-                    <DoubleAnimation Storyboard.TargetName="CorePulse"
-                                     Storyboard.TargetProperty="ScaleX"
-                                     From="1" To="1.025"
-                                     Duration="0:0:5"
-                                     AutoReverse="True"
-                                     RepeatBehavior="Forever"/>
+                    <!-- Дополнительные орбиты -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="ExtraOrbit1Rotation"
+                        Storyboard.TargetProperty="Angle"
+                        From="0" To="360"
+                        Duration="0:0:40"
+                        RepeatBehavior="Forever"/>
 
-                    <DoubleAnimation Storyboard.TargetName="CorePulse"
-                                     Storyboard.TargetProperty="ScaleY"
-                                     From="1" To="1.025"
-                                     Duration="0:0:5"
-                                     AutoReverse="True"
-                                     RepeatBehavior="Forever"/>
+                    <DoubleAnimation
+                        Storyboard.TargetName="ExtraOrbit2Rotation"
+                        Storyboard.TargetProperty="Angle"
+                        From="360" To="0"
+                        Duration="0:0:50"
+                        RepeatBehavior="Forever"/>
+
+                    <DoubleAnimation
+                        Storyboard.TargetName="ExtraOrbit3Rotation"
+                        Storyboard.TargetProperty="Angle"
+                        From="0" To="360"
+                        Duration="0:1:00"
+                        RepeatBehavior="Forever"/>
+
+                    <DoubleAnimation
+                        Storyboard.TargetName="ExtraOrbit4Rotation"
+                        Storyboard.TargetProperty="Angle"
+                        From="360" To="0"
+                        Duration="0:1:12"
+                        RepeatBehavior="Forever"/>
+
+                    <!-- Внешняя дымка -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="MistOrbit1Rotation"
+                        Storyboard.TargetProperty="Angle"
+                        From="0" To="360"
+                        Duration="0:1:25"
+                        RepeatBehavior="Forever"/>
+
+                    <DoubleAnimation
+                        Storyboard.TargetName="MistOrbit2Rotation"
+                        Storyboard.TargetProperty="Angle"
+                        From="360" To="0"
+                        Duration="0:1:45"
+                        RepeatBehavior="Forever"/>
+
+                    <!-- Плавное изменение яркости -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="OrbitImage1"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0.90" To="1"
+                        Duration="0:0:7"
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"/>
+
+                    <DoubleAnimation
+                        Storyboard.TargetName="OrbitImage2"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0.32" To="0.50"
+                        Duration="0:0:9"
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"/>
+
+                    <!-- Пульсация ядра -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="CorePulse"
+                        Storyboard.TargetProperty="ScaleX"
+                        From="1" To="1.025"
+                        Duration="0:0:5"
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"/>
+
+                    <DoubleAnimation
+                        Storyboard.TargetName="CorePulse"
+                        Storyboard.TargetProperty="ScaleY"
+                        From="1" To="1.025"
+                        Duration="0:0:5"
+                        AutoReverse="True"
+                        RepeatBehavior="Forever"/>
+
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -80,241 +147,276 @@
 
             <Grid Width="600" Height="600">
 
-                <!-- Первая широкая орбита -->
+                <!-- Дальний слабый слой, как испарение -->
+                <Image x:Name="OrbitImage3"
+                       Source="/OrbitRings.png"
+                       Width="920"
+                       Height="920"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       IsHitTestVisible="False"
+                       Opacity="0.10"
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.Effect>
+                        <BlurEffect Radius="5"/>
+                    </Image.Effect>
+
+                    <Image.RenderTransform>
+                        <RotateTransform
+                            x:Name="OrbitImageRotation3"
+                            Angle="0"/>
+                    </Image.RenderTransform>
+                </Image>
+
+                <!-- Первый слой энергетических колец -->
+                <Image x:Name="OrbitImage1"
+                       Source="/OrbitRings.png"
+                       Width="700"
+                       Height="700"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       IsHitTestVisible="False"
+                       Opacity="1"
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <RotateTransform
+                            x:Name="OrbitImageRotation1"
+                            Angle="0"/>
+                    </Image.RenderTransform>
+                </Image>
+
+                <!-- Второй слой энергетических колец -->
+                <Image x:Name="OrbitImage2"
+                       Source="/OrbitRings.png"
+                       Width="740"
+                       Height="740"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       IsHitTestVisible="False"
+                       Opacity="0.42"
+                       RenderTransformOrigin="0.5,0.5">
+
+                    <Image.RenderTransform>
+                        <RotateTransform
+                            x:Name="OrbitImageRotation2"
+                            Angle="0"/>
+                    </Image.RenderTransform>
+                </Image>
+
+                <!-- Внешняя еле заметная дымка-орбита 1 -->
                 <Canvas Width="600"
                         Height="600"
                         IsHitTestVisible="False"
                         RenderTransformOrigin="0.5,0.5">
 
                     <Canvas.RenderTransform>
-                        <RotateTransform x:Name="Orbit1Rotation"
-                                         Angle="0"/>
+                        <RotateTransform
+                            x:Name="MistOrbit1Rotation"
+                            Angle="0"/>
                     </Canvas.RenderTransform>
 
-                    <Ellipse Canvas.Left="58"
-                             Canvas.Top="166"
-                             Width="484"
-                             Height="268"
+                    <Ellipse Canvas.Left="10"
+                             Canvas.Top="50"
+                             Width="580"
+                             Height="500"
                              Fill="Transparent"
-                             Stroke="#377AA8"
-                             StrokeThickness="1.3"
-                             Opacity="0.30"/>
-
-                    <Ellipse Canvas.Left="58"
-                             Canvas.Top="166"
-                             Width="484"
-                             Height="268"
-                             Fill="Transparent"
-                             Stroke="#26AFFF"
-                             StrokeThickness="2.6"
-                             StrokeDashArray="18 145"
-                             Opacity="0.85">
-                        <Ellipse.Effect>
-                            <DropShadowEffect Color="#168BFF"
-                                              BlurRadius="15"
-                                              ShadowDepth="0"
-                                              Opacity="0.8"/>
-                        </Ellipse.Effect>
-                    </Ellipse>
-
-                    <Ellipse Canvas.Left="291"
-                             Canvas.Top="157"
-                             Width="18"
-                             Height="18"
-                             Fill="#102B4A"
-                             Stroke="#A5ECFF"
-                             StrokeThickness="2">
-                        <Ellipse.Effect>
-                            <DropShadowEffect Color="#29AFFF"
-                                              BlurRadius="15"
-                                              ShadowDepth="0"
-                                              Opacity="0.9"/>
-                        </Ellipse.Effect>
-                    </Ellipse>
-                </Canvas>
-
-                <!-- Вторая, более вертикальная орбита -->
-                <Canvas Width="600"
-                        Height="600"
-                        IsHitTestVisible="False"
-                        RenderTransformOrigin="0.5,0.5">
-
-                    <Canvas.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="0.88"/>
-                            <RotateTransform x:Name="Orbit2Rotation"
-                                             Angle="55"/>
-                        </TransformGroup>
-                    </Canvas.RenderTransform>
-
-                    <Ellipse Canvas.Left="148"
-                             Canvas.Top="60"
-                             Width="304"
-                             Height="480"
-                             Fill="Transparent"
-                             Stroke="#3979A5"
-                             StrokeThickness="1.2"
-                             Opacity="0.27"/>
-
-                    <Ellipse Canvas.Left="148"
-                             Canvas.Top="60"
-                             Width="304"
-                             Height="480"
-                             Fill="Transparent"
-                             Stroke="#27A7F5"
-                             StrokeThickness="2.4"
-                             StrokeDashArray="18 160"
-                             Opacity="0.78">
-                        <Ellipse.Effect>
-                            <DropShadowEffect Color="#168BFF"
-                                              BlurRadius="14"
-                                              ShadowDepth="0"
-                                              Opacity="0.75"/>
-                        </Ellipse.Effect>
-                    </Ellipse>
-
-                    <Ellipse Canvas.Left="293"
-                             Canvas.Top="52"
-                             Width="14"
-                             Height="14"
-                             Fill="#0D2440"
-                             Stroke="#8EDFFF"
-                             StrokeThickness="2"/>
-                </Canvas>
-
-                <!-- Третья наклонная орбита -->
-                <Canvas Width="600"
-                        Height="600"
-                        IsHitTestVisible="False"
-                        RenderTransformOrigin="0.5,0.5">
-
-                    <Canvas.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="0.82"/>
-                            <RotateTransform x:Name="Orbit3Rotation"
-                                             Angle="125"/>
-                        </TransformGroup>
-                    </Canvas.RenderTransform>
-
-                    <Ellipse Canvas.Left="68"
-                             Canvas.Top="105"
-                             Width="464"
-                             Height="390"
-                             Fill="Transparent"
-                             Stroke="#397CB5"
-                             StrokeThickness="1.2"
-                             Opacity="0.24"/>
-
-                    <Ellipse Canvas.Left="68"
-                             Canvas.Top="105"
-                             Width="464"
-                             Height="390"
-                             Fill="Transparent"
-                             Stroke="#259EFF"
-                             StrokeThickness="2.5"
-                             StrokeDashArray="20 180"
-                             Opacity="0.74">
-                        <Ellipse.Effect>
-                            <DropShadowEffect Color="#168BFF"
-                                              BlurRadius="14"
-                                              ShadowDepth="0"
-                                              Opacity="0.75"/>
-                        </Ellipse.Effect>
-                    </Ellipse>
-
-                    <!-- Маленький вращающийся элемент -->
-                    <Canvas Canvas.Left="438"
-                            Canvas.Top="139"
-                            Width="34"
-                            Height="34"
-                            RenderTransformOrigin="0.5,0.5">
-
-                        <Canvas.RenderTransform>
-                            <RotateTransform x:Name="ModuleSpin"/>
-                        </Canvas.RenderTransform>
-
-                        <Ellipse Canvas.Left="2"
-                                 Canvas.Top="2"
-                                 Width="30"
-                                 Height="30"
-                                 Fill="#0A1930"
-                                 Stroke="#64C7FF"
-                                 StrokeThickness="2">
-                            <Ellipse.Effect>
-                                <DropShadowEffect Color="#168BFF"
-                                                  BlurRadius="14"
-                                                  ShadowDepth="0"
-                                                  Opacity="0.85"/>
-                            </Ellipse.Effect>
-                        </Ellipse>
-
-                        <Ellipse Canvas.Left="8"
-                                 Canvas.Top="8"
-                                 Width="18"
-                                 Height="18"
-                                 Fill="Transparent"
-                                 Stroke="#A0E9FF"
-                                 StrokeThickness="1.5"
-                                 StrokeDashArray="5 4"/>
-
-                        <Ellipse Canvas.Left="14"
-                                 Canvas.Top="14"
-                                 Width="6"
-                                 Height="6"
-                                 Fill="#8BE4FF"/>
-                    </Canvas>
-                </Canvas>
-
-                <!-- Четвёртая, дальняя орбита -->
-                <Canvas Width="600"
-                        Height="600"
-                        IsHitTestVisible="False"
-                        RenderTransformOrigin="0.5,0.5">
-
-                    <Canvas.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleY="0.88"/>
-                            <RotateTransform x:Name="Orbit4Rotation"
-                                             Angle="40"/>
-                        </TransformGroup>
-                    </Canvas.RenderTransform>
-
-                    <Ellipse Canvas.Left="117"
-                             Canvas.Top="91"
-                             Width="366"
-                             Height="418"
-                             Fill="Transparent"
-                             Stroke="#356D96"
+                             Stroke="#62BFFF"
                              StrokeThickness="1.1"
-                             Opacity="0.19"/>
-
-                    <Ellipse Canvas.Left="117"
-                             Canvas.Top="91"
-                             Width="366"
-                             Height="418"
-                             Fill="Transparent"
-                             Stroke="#398FD0"
-                             StrokeThickness="2"
-                             StrokeDashArray="15 220"
-                             Opacity="0.56">
+                             Opacity="0.06">
                         <Ellipse.Effect>
-                            <DropShadowEffect Color="#168BFF"
-                                              BlurRadius="11"
-                                              ShadowDepth="0"
-                                              Opacity="0.65"/>
+                            <BlurEffect Radius="2"/>
                         </Ellipse.Effect>
                     </Ellipse>
+                </Canvas>
 
-                    <Ellipse Canvas.Left="293"
-                             Canvas.Top="83"
+                <!-- Внешняя еле заметная дымка-орбита 2 -->
+                <Canvas Width="600"
+                        Height="600"
+                        IsHitTestVisible="False"
+                        RenderTransformOrigin="0.5,0.5">
+
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.90"/>
+                            <RotateTransform
+                                x:Name="MistOrbit2Rotation"
+                                Angle="35"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                    <Ellipse Canvas.Left="0"
+                             Canvas.Top="35"
+                             Width="600"
+                             Height="530"
+                             Fill="Transparent"
+                             Stroke="#7ACDFF"
+                             StrokeThickness="0.9"
+                             Opacity="0.05">
+                        <Ellipse.Effect>
+                            <BlurEffect Radius="2"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                </Canvas>
+
+                <!-- Орбита 1 -->
+                <Canvas Width="600"
+                        Height="600"
+                        IsHitTestVisible="False"
+                        RenderTransformOrigin="0.5,0.5">
+
+                    <Canvas.RenderTransform>
+                        <RotateTransform
+                            x:Name="ExtraOrbit1Rotation"
+                            Angle="0"/>
+                    </Canvas.RenderTransform>
+
+                    <Ellipse Canvas.Left="40"
+                             Canvas.Top="86"
+                             Width="520"
+                             Height="430"
+                             Fill="Transparent"
+                             Stroke="#2A86D7"
+                             StrokeThickness="1.2"
+                             Opacity="0.21"/>
+
+                    <Ellipse Canvas.Left="294.5"
+                             Canvas.Top="80.5"
+                             Width="11"
+                             Height="11"
+                             Fill="#F0FCFF">
+                        <Ellipse.Effect>
+                            <DropShadowEffect
+                                Color="#80DFFF"
+                                BlurRadius="15"
+                                ShadowDepth="0"
+                                Opacity="0.92"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                </Canvas>
+
+                <!-- Орбита 2 -->
+                <Canvas Width="600"
+                        Height="600"
+                        IsHitTestVisible="False"
+                        RenderTransformOrigin="0.5,0.5">
+
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.88"/>
+                            <RotateTransform
+                                x:Name="ExtraOrbit2Rotation"
+                                Angle="45"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                    <Ellipse Canvas.Left="78"
+                             Canvas.Top="55"
+                             Width="444"
+                             Height="490"
+                             Fill="Transparent"
+                             Stroke="#2B7FD1"
+                             StrokeThickness="1.1"
+                             Opacity="0.18"/>
+
+                    <Ellipse Canvas.Left="294"
+                             Canvas.Top="49"
                              Width="12"
                              Height="12"
-                             Fill="#102A45"
-                             Stroke="#72C9F2"
-                             StrokeThickness="1.7"/>
+                             Fill="#F0FCFF">
+                        <Ellipse.Effect>
+                            <DropShadowEffect
+                                Color="#80DFFF"
+                                BlurRadius="15"
+                                ShadowDepth="0"
+                                Opacity="0.92"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
                 </Canvas>
 
-                <!-- Подложка закрывает прозрачные места текстуры ядра -->
+                <!-- Орбита 3 -->
+                <Canvas Width="600"
+                        Height="600"
+                        IsHitTestVisible="False"
+                        RenderTransformOrigin="0.5,0.5">
+
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.84"/>
+                            <RotateTransform
+                                x:Name="ExtraOrbit3Rotation"
+                                Angle="120"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                    <Ellipse Canvas.Left="48"
+                             Canvas.Top="78"
+                             Width="504"
+                             Height="446"
+                             Fill="Transparent"
+                             Stroke="#3A97EA"
+                             StrokeThickness="1"
+                             Opacity="0.15"/>
+
+                    <Ellipse Canvas.Left="295"
+                             Canvas.Top="73"
+                             Width="10"
+                             Height="10"
+                             Fill="#F0FCFF">
+                        <Ellipse.Effect>
+                            <DropShadowEffect
+                                Color="#80DFFF"
+                                BlurRadius="15"
+                                ShadowDepth="0"
+                                Opacity="0.92"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                </Canvas>
+
+                <!-- Орбита 4 -->
+                <Canvas Width="600"
+                        Height="600"
+                        IsHitTestVisible="False"
+                        RenderTransformOrigin="0.5,0.5">
+
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.92"/>
+                            <RotateTransform
+                                x:Name="ExtraOrbit4Rotation"
+                                Angle="200"/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                    <Ellipse Canvas.Left="65"
+                             Canvas.Top="68"
+                             Width="470"
+                             Height="458"
+                             Fill="Transparent"
+                             Stroke="#2A75BE"
+                             StrokeThickness="1"
+                             Opacity="0.14"/>
+
+                    <Ellipse Canvas.Left="294.5"
+                             Canvas.Top="62.5"
+                             Width="11"
+                             Height="11"
+                             Fill="#F0FCFF">
+                        <Ellipse.Effect>
+                            <DropShadowEffect
+                                Color="#80DFFF"
+                                BlurRadius="15"
+                                ShadowDepth="0"
+                                Opacity="0.92"/>
+                        </Ellipse.Effect>
+                    </Ellipse>
+                </Canvas>
+
+                <!-- Подложка ядра -->
                 <Path x:Name="CoreBaseShape"
                       Width="280"
                       Height="280"
@@ -322,6 +424,7 @@
                       Fill="#168CF5"
                       IsHitTestVisible="False"
                       RenderTransformOrigin="0.5,0.5">
+
                     <Path.RenderTransform>
                         <ScaleTransform ScaleX="1.06"
                                         ScaleY="1.06"/>

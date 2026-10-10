@@ -11,11 +11,13 @@
   <ItemGroup>
     <None Remove="CoreFrames.png" />
     <None Remove="CoreIdle.png" />
+    <None Remove="OrbitRings.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="CoreFrames.png" />
     <Resource Include="CoreIdle.png" />
+    <Resource Include="OrbitRings.png" />
   </ItemGroup>
 
 </Project>
