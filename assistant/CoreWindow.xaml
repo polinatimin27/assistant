@@ -1,17 +1,11 @@
-﻿<Window x:Class="assistant.CoreWindow"
+﻿<UserControl x:Class="assistant.CoreWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Assistant"
-        Width="900"
-        Height="760"
-        MinWidth="700"
-        MinHeight="600"
-        WindowStartupLocation="CenterScreen"
         Background="#050914"
         Loaded="CoreWindow_Loaded"
-        Closed="CoreWindow_Closed">
+        Unloaded="CoreWindow_Unloaded">
 
-    <Window.Triggers>
+    <UserControl.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
                 <Storyboard>
@@ -128,7 +122,7 @@
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
-    </Window.Triggers>
+    </UserControl.Triggers>
 
     <Grid>
         <Grid.Background>
@@ -464,4 +458,4 @@
             </Grid>
         </Viewbox>
     </Grid>
-</Window>
+</UserControl>

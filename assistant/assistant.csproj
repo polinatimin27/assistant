@@ -15,6 +15,7 @@
     <None Remove="MainWaves.png" />
     <None Remove="OrbitRings.png" />
     <None Remove="WaveHighlights.png" />
+    <None Remove="Themes\**\*.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,7 @@
     <Resource Include="MainWaves.png" />
     <Resource Include="OrbitRings.png" />
     <Resource Include="WaveHighlights.png" />
+    <Resource Include="Themes\**\*.png" />
   </ItemGroup>
 
 </Project>
